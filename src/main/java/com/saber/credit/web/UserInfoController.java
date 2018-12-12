@@ -22,5 +22,10 @@ public class UserInfoController {
         return "index";
     }
 
+    @RequestMapping("/console")
+    public String console() {
+        return "console";
+    }
+
 
 }

@@ -4,10 +4,9 @@
 
 
 $(document).ready(function () {
+
     // 初始化内容
-    loadLeftMenu();
-    loadListView();
-    chart.loadBarChart();
+    init();
 });
 
 /**
@@ -291,4 +290,24 @@ function loadListView() {
             + "</div></div></div>";
     }
     $("#dataList").append(listHtml);
+}
+
+function init() {
+    //左侧菜单
+    loadLeftMenu();
+    //累计数据与实时数据
+    loadListView();
+    //柱形图
+    chart.loadBarChart();
+    //线型图
+    chart.loadLineChart();
+    //面积图
+    chart.loadAreaChart();
+    //线型图
+    chart.loadDoughnutChart();
+    //饼形图
+    chart.loadPieChart();
+    //散点图
+    chart.loadScatterChart();
+
 }
