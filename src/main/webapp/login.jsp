@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html lang="en">
@@ -17,6 +18,15 @@
     <link rel="stylesheet" href="css/style.css">
     <!-- endinject -->
     <link rel="shortcut icon" href="images/favicon.png" />
+
+    <!-- plugins:js -->
+    <script src="vendors/js/vendor.bundle.base.js"></script>
+    <script src="vendors/js/vendor.bundle.addons.js"></script>
+    <!-- endinject -->
+    <!-- inject:js -->
+    <script src="js/core/off-canvas.js"></script>
+    <script src="js/core/misc.js"></script>
+    <!-- endinject -->
 </head>
 
 <body>
@@ -39,7 +49,7 @@
                                 <input type="password" class="form-control form-control-lg" id="exampleInputPassword1" placeholder="密码">
                             </div>
                             <div class="mt-3">
-                                <a class="btn btn-block btn-gradient-primary btn-lg font-weight-medium auth-form-btn" href="user/index">登陆</a>
+                                <a class="btn btn-block btn-gradient-primary btn-lg font-weight-medium auth-form-btn" href="<c:url value="/main/index"/>">登陆</a>
                             </div>
                             <div class="my-2 d-flex justify-content-between align-items-center">
                                 <div class="form-check">
@@ -63,13 +73,5 @@
     <!-- page-body-wrapper ends -->
 </div>
 <!-- container-scroller -->
-<!-- plugins:js -->
-<script src="vendors/js/vendor.bundle.base.js"></script>
-<script src="vendors/js/vendor.bundle.addons.js"></script>
-<!-- endinject -->
-<!-- inject:js -->
-<script src="js/core/off-canvas.js"></script>
-<script src="js/core/misc.js"></script>
-<!-- endinject -->
 </body>
 </html>

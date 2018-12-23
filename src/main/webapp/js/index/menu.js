@@ -4,7 +4,6 @@
 
 
 $(document).ready(function () {
-
     // 初始化内容
     init();
 });
@@ -18,184 +17,118 @@ function loadLeftMenu() {
             code: "console",
             title: "控制台",
             icon: "mdi mdi-airplay menu-icon",
-            items: [{title: "信息预览", href: "index", isShow: true}],
+            items: [{title: "信息预览", href: "/main/index", isShow: true}],
+            isShow: true
+        },
+        {
+            code: "mallManagement",
+            title: "商城管理",
+            icon: "mdi mdi-account-multiple menu-icon",
+            items: [
+                {title: "商品列表", href: "/mall/goodsList", isShow: true},
+                {title: "添加商品", href: "../login.jsp", isShow: true},
+                {title: "商品分类", href: "../login.jsp", isShow: true},
+                {title: "订单管理", href: "../login.jsp", isShow: true},
+                {title: "广告设置", href: "../login.jsp", isShow: true}
+                ],
+            isShow: true
+        },
+        {
+            code: "loanManagement",
+            title: "贷款管理",
+            icon: "mdi mdi-book-multiple-variant menu-icon",
+            items: [
+                {title: "借款订单", href: "../login.jsp", isShow: true},
+                {title: "放款管理", href: "../login.jsp", isShow: true},
+                {title: "还款计划", href: "../login.jsp", isShow: true},
+                {title: "逾期订单", href: "../login.jsp", isShow: true}
+            ],
             isShow: true
         },
         {
             code: "userManagement",
             title: "用户管理",
-            icon: "mdi mdi-account-multiple menu-icon",
-            items: [{title: "用户信息", href: "../login.jsp", isShow: true}, {
-                title: "黑名单",
-                href: "../login.jsp",
-                isShow: true
-            }],
-            isShow: true
-        },
-        {
-            code: "rule",
-            title: "规则引擎",
-            icon: "mdi mdi-book-multiple-variant menu-icon",
-            items: [{title: "字段维护", href: "../login.jsp", isShow: true}, {
-                title: "规则集匹配",
-                href: "../login.jsp",
-                isShow: true
-            },
-                {title: "规则类型绑定", href: "../login.jsp", isShow: true},
-                {title: "规则匹配记录", href: "../login.jsp", isShow: true}],
+            icon: "mdi mdi-air-conditioner menu-icon",
+            items: [
+                {title: "用户信息", href: "../login.jsp", isShow: true},
+                {title: "黑名单", href: "../login.jsp", isShow: true}
+            ],
             isShow: true
         },
         {
             code: "riskManagement",
             title: "风控管理",
-            icon: "mdi mdi-air-conditioner menu-icon",
-            items: [{title: "认领报告", href: "../login.jsp", isShow: true},
-                {title: "风控报告初审", href: "../login.jsp", isShow: true},
-                {title: "用户额度", href: "../login.jsp", isShow: true}],
-            isShow: true
-        },
-        {
-            code: "orderManagement",
-            title: "订单管理",
             icon: "mdi mdi-clipboard-text menu-icon",
-            items: [{title: "申请订单", href: "../login.jsp", isShow: true},
-                {title: "借款进度", href: "../login.jsp", isShow: true},
-                {title: "放款订单", href: "../login.jsp", isShow: true},
-                {title: "购买报告", href: "../login.jsp", isShow: true}],
+            items: [
+                {title: "风控报告", href: "../login.jsp", isShow: true},
+                {title: "认证项管理", href: "../login.jsp", isShow: true},
+                {title: "每日通过率", href: "../login.jsp", isShow: true},
+                {title: "用户认证统计", href: "../login.jsp", isShow: true}
+            ],
             isShow: true
         },
         {
-            code: "loanManagement",
-            title: "放款管理",
-            icon: "mdi mdi-currency-usd menu-icon",
-            items: [{title: "放款电核", href: "../login.jsp", isShow: true},
-                {title: "电核拒绝", href: "../login.jsp", isShow: true},
-                {title: "放款支付操作", href: "../login.jsp", isShow: true},
-                {title: "放款支付记录", href: "../login.jsp", isShow: true}],
-            isShow: true
-        },
-        {
-            code: "repaymentManagement",
-            title: "还款管理",
-            icon: "mdi mdi-currency-ngn menu-icon",
-            items: [{title: "还款计划", href: "../login.jsp", isShow: true},
-                {title: "还款记录", href: "../login.jsp", isShow: true},
-                {title: "代扣支付列表", href: "../login.jsp", isShow: true},
-                {title: "支付宝还款列表", href: "../login.jsp", isShow: true},
-                {title: "银行还款列表", href: "../login.jsp", isShow: true},
-                {title: "展期记录", href: "../login.jsp", isShow: true}],
-            isShow: true
-        },
-        {
-            code: "afterLoanManagement",
+            code: "postLoanManagement",
             title: "贷后管理",
+            icon: "mdi mdi-currency-usd menu-icon",
+            items: [
+                {title: "催收预警", href: "../login.jsp", isShow: true},
+                {title: "催收员统计", href: "../login.jsp", isShow: true},
+                {title: "催收人员管理", href: "../login.jsp", isShow: true}
+            ],
+            isShow: true
+        },
+        {
+            code: "dataStatistics",
+            title: "数据统计",
+            icon: "mdi mdi-currency-ngn menu-icon",
+            items: [
+                {title: "每日损益统计", href: "../login.jsp", isShow: true},
+                {title: "每日流水统计", href: "../login.jsp", isShow: true},
+                {title: "数据日报", href: "../login.jsp", isShow: true}
+            ],
+            isShow: true
+        },
+        {
+            code: "privilegeManagement",
+            title: "权限管理",
             icon: "mdi mdi-sd menu-icon",
-            items: [{title: "已还款订单", href: "../login.jsp", isShow: true},
-                {title: "已逾期订单", href: "../login.jsp", isShow: true},
-                {title: "已坏账订单", href: "../login.jsp", isShow: true},
-                {title: "今日逾前订单提醒", href: "../login.jsp", isShow: true}],
+            items: [
+                {title: "管理员列表", href: "../login.jsp", isShow: true},
+                {title: "角色管理", href: "../login.jsp", isShow: true},
+                {title: "管理员日志", href: "../login.jsp", isShow: true}
+            ],
             isShow: true
         },
         {
-            code: "remindersManagement",
-            title: "催收人员管理",
+            code: "promotionChannel",
+            title: "推广渠道",
             icon: "mdi mdi-account-multiple-outline menu-icon",
-            items: [{title: "催收人员列表", href: "../login.jsp", isShow: true},
-                {title: "催收分组", href: "../login.jsp", isShow: true}],
+            items: [
+                {title: "渠道列表", href: "../login.jsp", isShow: true},
+                {title: "渠道统计报表", href: "../login.jsp", isShow: true},
+                {title: "渠道管理员", href: "../login.jsp", isShow: true}
+                ],
             isShow: true
         },
         {
-            code: "remindOrderManagement",
-            title: "催收订单管理",
+            code: "ruleEngine",
+            title: "规则引擎",
             icon: "mdi mdi-book-multiple-variant menu-icon",
-            items: [{title: "催收总订单", href: "../login.jsp", isShow: true},
-                {title: "待催收记录", href: "../login.jsp", isShow: true},
-                {title: "催收反馈", href: "../login.jsp", isShow: true}],
-            isShow: true
-        },
-        {
-            code: "myRemindOrder",
-            title: "我的催收订单",
-            icon: "mdi mdi-book-open-page-variant menu-icon",
-            items: [{title: "我的订单", href: "../login.jsp", isShow: true},
-                {title: "待催收订单", href: "../login.jsp", isShow: true},
-                {title: "催收中订单", href: "../login.jsp", isShow: true},
-                {title: "承诺还款订单", href: "../login.jsp", isShow: true},
-                {title: "催收成功订单", href: "../login.jsp", isShow: true}],
-            isShow: true
-        },
-        {
-            code: "remindWarning",
-            title: "催收预警",
-            icon: "mdi mdi-access-point-network menu-icon",
-            items: [{title: "已逾期未入催", href: "../login.jsp", isShow: true},
-                {title: "未还款已出催", href: "../login.jsp", isShow: true},
-                {title: "未分配催收员", href: "../login.jsp", isShow: true}],
-            isShow: true
-        },
-        {
-            code: "riskData",
-            title: "风控数据",
-            icon: "mdi mdi-cloud-print menu-icon",
-            items: [{title: "每日通过率", href: "../login.jsp", isShow: true},
-                {title: "用户认证数据统计", href: "../login.jsp", isShow: true}],
-            isShow: true
-        },
-        {
-            code: "remindStatistic",
-            title: "催收统计",
-            icon: "mdi mdi-chart-areaspline menu-icon",
-            items: [{title: "催收员统计", href: "../login.jsp", isShow: true},
-                {title: "催收率统计", href: "../login.jsp", isShow: true}],
-            isShow: true
-        },
-        {
-            code: "financialData",
-            title: "财务数据",
-            icon: "mdi mdi-plus-network menu-icon",
-            items: [{title: "每日损益统计", href: "../login.jsp", isShow: true},
-                {title: "每日流水统计", href: "../login.jsp", isShow: true}],
-            isShow: true
-        },
-        {
-            code: "operationalData",
-            title: "运营数据",
-            icon: "mdi mdi-google-drive menu-icon",
-            items: [{title: "注册分析", href: "../login.jsp", isShow: true},
-                {title: "首逾分析", href: "../login.jsp", isShow: true},
-                {title: "数据日报", href: "../login.jsp", isShow: true}],
-            isShow: true
-        },
-        {
-            code: "channelManagement",
-            title: "渠道管理",
-            icon: "mdi mdi-vector-triangle menu-icon",
-            items: [{title: "渠道列表", href: "../login.jsp", isShow: true},
-                {title: "主题统计", href: "../login.jsp", isShow: true},
-                {title: "渠道统计总报表", href: "../login.jsp", isShow: true},
-                {title: "渠道统计日报表", href: "../login.jsp", isShow: true},
-                {title: "下载链接管理", href: "../login.jsp", isShow: true}],
-            isShow: true
-        },
-        {
-            code: "channelVIPManagement",
-            title: "渠道会员管理",
-            icon: "mdi mdi-vimeo menu-icon",
-            items: [{title: "管理员列表", href: "../login.jsp", isShow: true}],
-            isShow: true
-        },
-        {
-            code: "thirdPartyProducts",
-            title: "第三方产品",
-            icon: "mdi mdi-scale-balance menu-icon",
-            items: [{title: "产品列表", href: "../login.jsp", isShow: true}],
+            items: [
+                {title: "字段维护", href: "../login.jsp", isShow: true},
+                {title: "规则集配置", href: "../login.jsp", isShow: true},
+                {title: "规则类型绑定", href: "../login.jsp", isShow: true},
+                {title: "规则匹配记录", href: "../login.jsp", isShow: true}
+            ],
             isShow: true
         },
         {
             code: "systemConfig",
             title: "系统配置",
             icon: "mdi mdi-settings menu-icon",
-            items: [{title: "菜单管理", href: "../login.jsp", isShow: true},
+            items: [
+                {title: "菜单管理", href: "../login.jsp", isShow: true},
                 {title: "管理员管理", href: "../login.jsp", isShow: true},
                 {title: "角色管理", href: "../login.jsp", isShow: true},
                 {title: "系统参数设置", href: "../login.jsp", isShow: true},
@@ -203,7 +136,8 @@ function loadLeftMenu() {
                 {title: "认证项管理", href: "../login.jsp", isShow: true},
                 {title: "借贷产品管理", href: "../login.jsp", isShow: true},
                 {title: "极光推送", href: "../login.jsp", isShow: true},
-                {title: "APP版本发布", href: "../login.jsp", isShow: true}],
+                {title: "APP版本发布", href: "../login.jsp", isShow: true}
+            ],
             isShow: true
         }
 
@@ -218,7 +152,7 @@ function loadLeftMenu() {
                 var itemHtmlLi = "";
                 for (var j = 0; j < meuInfo[i].items.length; j++) {
                     if (meuInfo[i].items[j].isShow) {
-                        itemHtmlLi += "<li class='nav-item'> <a class='nav-link' href='" + meuInfo[i].items[j].href + "'>" + meuInfo[i].items[j].title + "</a></li>";
+                        itemHtmlLi += "<li class='nav-item'> <a class='nav-link' href='javascript:void(0);' onclick='changeRightView(\""+meuInfo[i].items[j].href+"\")'>" + meuInfo[i].items[j].title + "</a></li>";
                     }
 
                 }
@@ -310,4 +244,7 @@ function init() {
     //散点图
     chart.loadScatterChart();
 
+}
+function changeRightView(url) {
+    $("#rightIFrame",parent.document.body).attr("src",url);
 }

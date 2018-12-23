@@ -1,5 +1,5 @@
 /**
- * Created by saber on 2018/11/26.
+ * Created by saber on 2018/11/26
  */
 var chart = {
     loadBarChart: function () { //柱形图
