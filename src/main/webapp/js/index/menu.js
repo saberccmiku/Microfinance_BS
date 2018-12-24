@@ -17,7 +17,7 @@ function loadLeftMenu() {
             code: "console",
             title: "控制台",
             icon: "mdi mdi-airplay menu-icon",
-            items: [{title: "信息预览", href: "/main/index", isShow: true}],
+            items: [{title: "信息预览", href: "/console/index", isShow: true}],
             isShow: true
         },
         {
