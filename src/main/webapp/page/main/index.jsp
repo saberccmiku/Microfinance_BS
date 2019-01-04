@@ -52,7 +52,7 @@
         <!--left view-->
         <%@include file="leftMenu.jsp" %>
         <!--main view-->
-        <iframe id="rightIFrame" style="width: 100%;border:0;" src="<c:url value="/console/index"/>"></iframe>
+        <iframe class="content-wrapper" id="rightIFrame" style="width: 100%;height:100%;border:0;" src="<c:url value="/console/index"/>"></iframe>
         <!-- main-panel ends -->
     </div>
     <!-- page-body-wrapper ends -->

@@ -4,13 +4,73 @@
 <!-- 设置为IUserDao接口方法提供sql语句配置 -->
 <mapper namespace="com.saber.credit.dao.UserInfoDao">
 
-    <sql id="Base_Column_List" >
-    ID, Name, Age
+    <sql id="Base_Column_List">
+      ID id,
+      CREATE_USER createUser,
+      CREATE_DATE createDate,
+      LAST_CHANGE_USER lastChangeUser,
+      LAST_CHANGE_DATE lastChangeDate,
+      DEL_FLAG delFlag,
+      USER_ID userId,
+      NAME name,
+      SEX sex,
+      AGE age,
+      ID_CARD idCard,
+      PHONE phone,
+      PASSWORD password,
+      EMAIL email,
+      NATIVE_PLACE nativePlace,
+      ADDRESS address,
+      DEVICE device
     </sql>
 
     <select id="queryList" resultType="com.saber.credit.bean.UserInfo" parameterType="String">
-        SELECT <include refid="Base_Column_List"/>
-         FROM USERINFO
+        SELECT
+        <include refid="Base_Column_List"/>
+        FROM SEC_USER
     </select>
+
+    <insert id="insert" parameterType="com.saber.credit.bean.UserInfo">
+        <selectKey keyProperty="id" resultType="String" order="BEFORE">
+            select sys_guid() from dual
+        </selectKey>
+        INSERT INTO sec_user (
+        ID,
+        CREATE_USER,
+        CREATE_DATE,
+        LAST_CHANGE_USER,
+        LAST_CHANGE_DATE,
+        DEL_FLAG,
+        USER_ID,
+        NAME,
+        SEX,
+        AGE,
+        ID_CARD,
+        PHONE,
+        PASSWORD,
+        EMAIL,
+        NATIVE_PLACE,
+        ADDRESS,
+        DEVICE
+        )VALUES (
+        #{id,jdbcType=VARCHAR},
+        #{createUser,jdbcType=VARCHAR},
+        #{createDate,jdbcType=TIMESTAMP},
+        #{lastChangeUser,jdbcType=VARCHAR},
+        #{lastChangeDate,jdbcType=TIMESTAMP},
+        #{delFlag,jdbcType=VARCHAR},
+        #{userId,jdbcType=VARCHAR},
+        #{name,jdbcType=VARCHAR},
+        #{sex,jdbcType=VARCHAR},
+        #{age,jdbcType=VARCHAR},
+        #{idCard,jdbcType=VARCHAR},
+        #{phone,jdbcType=VARCHAR},
+        #{password,jdbcType=VARCHAR},
+        #{email,jdbcType=VARCHAR},
+        #{nativePlace,jdbcType=VARCHAR},
+        #{address,jdbcType=VARCHAR},
+        #{device,jdbcType=VARCHAR}
+        )
+    </insert>
 
 </mapper>

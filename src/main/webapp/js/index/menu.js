@@ -94,7 +94,7 @@ function loadLeftMenu() {
             title: "权限管理",
             icon: "mdi mdi-sd menu-icon",
             items: [
-                {title: "管理员列表", href: "../login.jsp", isShow: true},
+                {title: "管理员列表", href: "/purview/employeeList", isShow: true},
                 {title: "角色管理", href: "../login.jsp", isShow: true},
                 {title: "管理员日志", href: "../login.jsp", isShow: true}
             ],
