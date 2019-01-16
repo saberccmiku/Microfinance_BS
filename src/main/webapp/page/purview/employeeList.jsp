@@ -81,7 +81,15 @@
         width: 600,
         buttons: {
             "确定": function () {
-                $("#dialog").contents().find("#submit").click();
+                $("#dialog").contents().find("#submit").click(
+                    function () {
+                        $.ajax({
+                            type:'post',
+                            dataType:'json',
+                            url:${basePath}/
+                        });
+                    }
+                );
             },
             "取消": function () {
                 $(this).dialog("close");
