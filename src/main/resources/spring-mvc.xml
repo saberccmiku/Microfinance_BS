@@ -8,7 +8,7 @@
        http://www.springframework.org/schema/context
        http://www.springframework.org/schema/context/spring-context.xsd
        http://www.springframework.org/schema/mvc
-       http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd">
+       http://www.springframework.org/schema/mvc/spring-mvc-4.2.xsd">
 
     <!-- 扫描web相关的bean -->
     <context:component-scan base-package="com.saber.credit.web"/>
@@ -25,5 +25,21 @@
         <property name="prefix" value="/page/"/>
         <property name="suffix" value=".jsp"/>
     </bean>
+
+    <!--配置拦截器, 多个拦截器,顺序执行 -->
+    <mvc:interceptors>
+        <mvc:interceptor>
+            <mvc:mapping path="/**"/>
+            <!-- 但是排除下面这些，也就是不拦截请求 -->
+            <mvc:exclude-mapping path="/js/**"/>
+            <mvc:exclude-mapping path="/css/**"/>
+            <mvc:exclude-mapping path="/images/**"/>
+            <mvc:exclude-mapping path="/fonts/**"/>
+            <mvc:exclude-mapping path="/plug/**"/>
+
+            <bean class="com.saber.credit.interceptor.LoginInterceptor"/>
+        </mvc:interceptor>
+    </mvc:interceptors>
+
 
 </beans>

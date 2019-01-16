@@ -26,7 +26,7 @@ function loadLeftMenu() {
             icon: "mdi mdi-account-multiple menu-icon",
             items: [
                 {title: "商品列表", href: "/mall/goodsList", isShow: true},
-                {title: "添加商品", href: "../login.jsp", isShow: true},
+                {title: "添加商品", href: "/login/login", isShow: true},
                 {title: "商品分类", href: "../login.jsp", isShow: true},
                 {title: "订单管理", href: "../login.jsp", isShow: true},
                 {title: "广告设置", href: "../login.jsp", isShow: true}

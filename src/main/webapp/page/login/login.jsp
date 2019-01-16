@@ -9,23 +9,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Purple Admin</title>
     <!-- plugins:css -->
-    <link rel="stylesheet" href="vendors/iconfonts/mdi/css/materialdesignicons.min.css">
-    <link rel="stylesheet" href="vendors/css/vendor.bundle.base.css">
+    <link rel="stylesheet" href="../../plug/vendors/iconfonts/mdi/css/materialdesignicons.min.css">
+    <link rel="stylesheet" href="../../plug/vendors/css/vendor.bundle.base.css">
     <!-- endinject -->
     <!-- plugin css for this page -->
     <!-- End plugin css for this page -->
     <!-- inject:css -->
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="../../css/style.css">
     <!-- endinject -->
-    <link rel="shortcut icon" href="images/favicon.png" />
+    <link rel="shortcut icon" href="../../images/favicon.png"/>
 
     <!-- plugins:js -->
-    <script src="vendors/js/vendor.bundle.base.js"></script>
-    <script src="vendors/js/vendor.bundle.addons.js"></script>
+    <script src="../../plug/vendors/js/vendor.bundle.base.js"></script>
+    <script src="../../plug/vendors/js/vendor.bundle.addons.js"></script>
     <!-- endinject -->
     <!-- inject:js -->
-    <script src="js/core/off-canvas.js"></script>
-    <script src="js/core/misc.js"></script>
+    <script src="../../js/core/off-canvas.js"></script>
+    <script src="../../js/core/misc.js"></script>
     <!-- endinject -->
 </head>
 
@@ -37,19 +37,24 @@
                 <div class="col-lg-4 mx-auto">
                     <div class="auth-form-light text-left p-5">
                         <div class="brand-logo">
-                            <img src="images/logo.svg">
+                            <img src="../../images/logo.svg">
                         </div>
                         <h4>您好！让我们开始吧</h4>
                         <h6 class="font-weight-light">登录继续.</h6>
-                        <form class="pt-3">
+                        <form id="loginForm" class="pt-3" action="/login/login" method="post">
                             <div class="form-group">
-                                <input type="email" class="form-control form-control-lg" id="exampleInputEmail1" placeholder="用户名">
+                                <input type="email" class="form-control form-control-lg" id="email"
+                                       placeholder="用户名" name="email">
                             </div>
                             <div class="form-group">
-                                <input type="password" class="form-control form-control-lg" id="exampleInputPassword1" placeholder="密码">
+                                <input type="password" class="form-control form-control-lg" id="password"
+                                       placeholder="密码" name="password">
                             </div>
                             <div class="mt-3">
-                                <a class="btn btn-block btn-gradient-primary btn-lg font-weight-medium auth-form-btn" href="<c:url value="/main/index"/>">登陆</a>
+                                <%--<a id="login"--%>
+                                   <%--class="btn btn-block btn-gradient-primary btn-lg font-weight-medium auth-form-btn"--%>
+                                   <%--href="<c:url value="/main/index"/>">登陆</a>--%>
+                                <input  class="btn btn-block btn-gradient-primary btn-lg font-weight-medium auth-form-btn" type="submit" value="登录">
                             </div>
                             <div class="my-2 d-flex justify-content-between align-items-center">
                                 <div class="form-check">
@@ -74,4 +79,9 @@
 </div>
 <!-- container-scroller -->
 </body>
+<script>
+//    $('#login').click(function () {
+//        $("form[name='loginForm']").submit();
+//    });
+</script>
 </html>

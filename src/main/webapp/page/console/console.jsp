@@ -14,8 +14,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>控制台</title>
     <!-- plugins:css -->
-    <link rel="stylesheet" href="../../vendors/iconfonts/mdi/css/materialdesignicons.min.css">
-    <link rel="stylesheet" href="../../vendors/css/vendor.bundle.base.css">
+    <link rel="stylesheet" href="../../plug/vendors/iconfonts/mdi/css/materialdesignicons.min.css">
+    <link rel="stylesheet" href="../../plug/vendors/css/vendor.bundle.base.css">
     <!-- endinject -->
     <!-- inject:css -->
     <link rel="stylesheet" href="../../css/style.css">
@@ -24,8 +24,8 @@
 
 
     <!-- plugins:js -->
-    <script src="../../vendors/js/vendor.bundle.base.js"></script>
-    <script src="../../vendors/js/vendor.bundle.addons.js"></script>
+    <script src="../../plug/vendors/js/vendor.bundle.base.js"></script>
+    <script src="../../plug/vendors/js/vendor.bundle.addons.js"></script>
     <!-- endinject -->
     <!-- Plugin js for this page-->
     <!-- End plugin js for this page-->
