@@ -73,4 +73,11 @@
         )
     </insert>
 
+    <select id="queryByUserId" resultType="com.saber.credit.bean.UserInfo" parameterType="String">
+        SELECT
+        <include refid="Base_Column_List"/>
+        FROM SEC_USER
+        WHERE user_id =#{userId,jdbcType=VARCHAR}
+    </select>
+
 </mapper>

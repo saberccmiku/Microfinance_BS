@@ -26,6 +26,13 @@
         <property name="suffix" value=".jsp"/>
     </bean>
 
+    <mvc:annotation-driven>
+        <mvc:message-converters>
+            <bean class="org.springframework.http.converter.StringHttpMessageConverter"/>
+            <bean class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter"/>
+        </mvc:message-converters>
+    </mvc:annotation-driven>
+
     <!--配置拦截器, 多个拦截器,顺序执行 -->
     <mvc:interceptors>
         <mvc:interceptor>

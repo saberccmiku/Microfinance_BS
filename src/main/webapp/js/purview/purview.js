@@ -7,7 +7,6 @@ var purview = {
         return [//tye img显示图片地址  text文本 progress进度条文本
             {field: "id", name: "序号", type: "text"},
             {field: "userId", name: "账号", type: "text"},
-            {field: "password", name: "密码", type: "password"},
             {field: "name", name: "姓名", type: "text"},
             {field: "telephone", name: "电话号码", type: "text"},
             {field: "phone", name: "手机号码", type: "text"},
@@ -93,10 +92,10 @@ var purview = {
         //body
         for (var j = 0; j < bodyData.length; j++) {
             var colors = ["table-info", "table-warning", "table-danger", "table-success", "table-primary"];
-            $('#' + tableId + ' tbody').append("<tr class='" + colors[j % 5] + "' id='" + bodyData[j].id + "'></tr>");
+            $('#' + tableId + ' tbody').append("<tr class='" + colors[j % 5] + "' id='" + bodyData[j].id + "'><form><div>可以哟打啊</div></form></tr>");
             for (var k = 0; k < headData.length; k++) {
-
-                $('#' + tableId + ' tbody #' + bodyData[j].id).append("<td class='text-center'>" + bodyData[j][headData[k].field] + "</td>");
+                //$('#' + tableId + ' tbody  form').append("<td class='text-center'>" + bodyData[j][headData[k].field] + "</td>");
+                 $('#' + tableId + ' tbody  #' + bodyData[j].id).append("<td class='text-center'>" + bodyData[j][headData[k].field] + "</td>");
             }
             //增删改的按钮
             $('#' + tableId + ' tbody #' + bodyData[j].id).append("<td class='text-center'><div class='btn-group' role='group' aria-label='Basic example'><button id='update" + bodyData[j].id + "' type='button' class='btn btn-gradient-primary btn-rounded btn-icon'><i class='mdi mdi-pencil'></i></button><button id='delete" + bodyData[j].id + "' type='button' class='btn btn-gradient-info btn-rounded btn-icon'> <i class='mdi mdi-delete'></i></button></div></td>");
@@ -113,10 +112,24 @@ var purview = {
                             this.innerHTML = '<input class="text-center" type="text" value="' + this.innerHTML.replace(/"/g, '&quot;') + '"/>';
                         } else {
                             this.innerHTML = this.firstChild.value.replace(/</g, '&lt;').replace(/>/g, '&gt;');
+
                         }
                     }
                 });
             });
         }
+    },
+    //保存
+    saveUserInfo:function () {
+        $.ajax({
+            url:"",
+            type:"POST",
+            dataType:"json",
+            success:function (data) {//data是默认的，接收前台返回的数据
+
+                alert(JSON.stringify(data));
+
+            }
+        });
     }
 };

@@ -10,12 +10,12 @@
 <head>
     <title>Title</title>
     <!--bootstrap css-->
-    <link rel="stylesheet" href="../../bootstrap/css/bootstrap.css"/>
-    <link rel="stylesheet" href="../../bootstrap/validator/css/bootstrapValidator.css"/>
+    <link rel="stylesheet" href="../../plug/bootstrap/css/bootstrap.css"/>
+    <link rel="stylesheet" href="../../plug/bootstrap/validator/css/bootstrapValidator.css"/>
     <!--bootstrap js-->
-    <script src="../../jquery/js/jquery-1.9.0.min.js"></script>
-    <script type="text/javascript" src="../../bootstrap/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="../../bootstrap/validator/js/bootstrapValidator.js"></script>
+    <script src="../../plug/jquery/js/jquery-1.9.0.min.js"></script>
+    <script type="text/javascript" src="../../plug/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../plug/bootstrap/validator/js/bootstrapValidator.js"></script>
     <script type="text/javascript">
         $(document).ready(function () {
             /**
@@ -99,7 +99,7 @@
                                 message: '用户名长度必须在6到30之间'
                             }, /*最后一个没有逗号*/
                             regexp: {
-                                regexp: /^(\\+\\d{2}-)?0\\d{2,3}-\\d{7,8}$/,
+                                regexp: /^1(3|4|5|7|8)\d{9}$/,
                                 message: '手机号码不符合规范！'
                             }
 
@@ -172,7 +172,7 @@
 <div style="width: 97%">
     <div>
         <!-- class都是bootstrap定义好的样式，验证是根据input中的name值 -->
-        <form id="defaultForm" method="post" class="form-horizontal" action="ajaxSubmit.php">
+        <form id="defaultForm" class="form-horizontal" action="/purview/addUser" method="post" >
             <!-- 下面这个div必须要有，插件根据这个进行添加提示 -->
             <div class="form-group">
                 <label class="col-sm-1 control-label">账号</label>

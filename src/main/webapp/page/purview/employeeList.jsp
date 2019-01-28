@@ -11,16 +11,16 @@
 <head>
     <title>管理员列表</title>
     <!-- plugins:css -->
-    <link rel="stylesheet" href="../../vendors/iconfonts/mdi/css/materialdesignicons.min.css">
-    <link rel="stylesheet" href="../../vendors/css/vendor.bundle.base.css">
+    <link rel="stylesheet" href="../../plug/vendors/iconfonts/mdi/css/materialdesignicons.min.css">
+    <link rel="stylesheet" href="../../plug/vendors/css/vendor.bundle.base.css">
     <!-- inject:css -->
     <link rel="stylesheet" href="../../css/style.css">
-    <link rel="stylesheet" href="../../jquery/css/jquery-ui-1.10.0.custom.css">
+    <link rel="stylesheet" href="../../plug/jquery/css/jquery-ui-1.10.0.custom.css">
     <!-- plugins:js -->
-    <script src="../../vendors/js/vendor.bundle.base.js"></script>
-    <script src="../../vendors/js/vendor.bundle.addons.js"></script>
-    <script src="../../jquery/js/jquery-1.9.0.min.js"></script>
-    <script src="../../jquery/js/jquery-ui-1.10.0.custom.min.js"></script>
+    <script src="../../plug/vendors/js/vendor.bundle.base.js"></script>
+    <script src="../../plug/vendors/js/vendor.bundle.addons.js"></script>
+    <script src="../../plug/jquery/js/jquery-1.9.0.min.js"></script>
+    <script src="../../plug/jquery/js/jquery-ui-1.10.0.custom.min.js"></script>
     <script src="../../js/purview/purview.js"></script>
 
     <!--限制表格编辑状态样式-->
@@ -37,9 +37,7 @@
     </style>
     <script type="text/javascript">
         $(document).ready(function () {
-            purview.initEmployeeList("employeeList", purview.getEmployeeListHead(), purview.getEmployeeListBody());
-            var bean =${user};
-
+            purview.initEmployeeList("employeeList", purview.getEmployeeListHead(), ${users});
         });
     </script>
 </head>
@@ -81,15 +79,7 @@
         width: 600,
         buttons: {
             "确定": function () {
-                $("#dialog").contents().find("#submit").click(
-                    function () {
-                        $.ajax({
-                            type:'post',
-                            dataType:'json',
-                            url:${basePath}/
-                        });
-                    }
-                );
+                $("#dialog").contents().find("#submit").click();
             },
             "取消": function () {
                 $(this).dialog("close");

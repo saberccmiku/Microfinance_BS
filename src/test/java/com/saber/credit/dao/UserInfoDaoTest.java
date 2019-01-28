@@ -24,7 +24,6 @@ public class UserInfoDaoTest {
     public void testSelectUser() throws Exception {
          //List<UserInfo> userInfoList = dao.queryList();
         UserInfo userInfo = new UserInfo();
-        System.out.println("-------------:"+userInfo.getId());
         userInfo.setName("测试");
         userInfo.setAge(11);
         dao.insert(userInfo);

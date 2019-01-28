@@ -43,13 +43,14 @@
                         <h6 class="font-weight-light">登录继续.</h6>
                         <form id="loginForm" class="pt-3" action="/login/login" method="post">
                             <div class="form-group">
-                                <input type="email" class="form-control form-control-lg" id="email"
-                                       placeholder="用户名" name="email">
+                                <input type="text" class="form-control form-control-lg" id="userId"
+                                       placeholder="用户名" name="userId">
                             </div>
                             <div class="form-group">
                                 <input type="password" class="form-control form-control-lg" id="password"
                                        placeholder="密码" name="password">
                             </div>
+                            <div class="mt-3 text-danger">${msg}</div>
                             <div class="mt-3">
                                 <%--<a id="login"--%>
                                    <%--class="btn btn-block btn-gradient-primary btn-lg font-weight-medium auth-form-btn"--%>
