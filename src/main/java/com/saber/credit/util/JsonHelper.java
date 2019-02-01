@@ -3,6 +3,7 @@ package com.saber.credit.util;
 import net.sf.json.JSONArray;
 import org.codehaus.jackson.JsonGenerationException;
 import org.codehaus.jackson.JsonParseException;
+import org.codehaus.jackson.JsonParser;
 import org.codehaus.jackson.annotate.JsonAutoDetect;
 import org.codehaus.jackson.annotate.JsonMethod;
 import org.codehaus.jackson.map.DeserializationConfig;
@@ -113,6 +114,7 @@ public class JsonHelper {
         objectMapper.configure(DeserializationConfig.Feature.FAIL_ON_UNKNOWN_PROPERTIES, false);
         T bean = null;
         try {
+            objectMapper.configure(JsonParser.Feature.ALLOW_SINGLE_QUOTES, true);
             bean = objectMapper.readValue(jsonString, clazz);
         } catch (JsonParseException e) {
             e.printStackTrace();

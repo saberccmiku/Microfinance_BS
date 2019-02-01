@@ -2,6 +2,7 @@ package com.saber.credit.dao;
 
 import com.saber.credit.bean.AbstractBean;
 import org.apache.ibatis.annotations.Param;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Date;
 import java.util.List;
@@ -18,6 +19,7 @@ public interface AbstractDao<T extends AbstractBean> {
      * @param bean
      * @return
      */
+    @Transactional(rollbackFor = { Exception.class })
     Integer insert(T bean) throws Exception;
 
     /**
@@ -25,6 +27,7 @@ public interface AbstractDao<T extends AbstractBean> {
      * @param bean
      * @return
      */
+    @Transactional(rollbackFor = { Exception.class })
     Integer update(T bean) throws Exception;
 
     /**
@@ -36,6 +39,7 @@ public interface AbstractDao<T extends AbstractBean> {
      * @return
      * @throws Exception
      */
+    @Transactional(rollbackFor = { Exception.class })
     Integer delete(@Param("businessId")String businessId, @Param("modifyuser")String modifyuser, @Param("modifydate")Date modifyDate) throws Exception;
 
     /**

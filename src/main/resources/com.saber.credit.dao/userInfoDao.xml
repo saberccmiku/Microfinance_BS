@@ -77,7 +77,7 @@
         SELECT
         <include refid="Base_Column_List"/>
         FROM SEC_USER
-        WHERE user_id =#{userId,jdbcType=VARCHAR}
+        WHERE user_id =#{userId,jdbcType=VARCHAR} OR phone =#{userId,jdbcType=VARCHAR}
     </select>
 
 </mapper>
